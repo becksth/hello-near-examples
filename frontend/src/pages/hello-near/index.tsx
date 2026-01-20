@@ -9,7 +9,6 @@ import { useNearWallet } from 'near-connect-hooks';
 
 export default function HelloNear() {
   const { signedAccountId, viewFunction, callFunction } = useNearWallet();
-
   const [greeting, setGreeting] = useState<string>('loading...');
   const [newGreeting, setNewGreeting] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
