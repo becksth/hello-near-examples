@@ -8,7 +8,7 @@
     },
     "jsx": "preserve",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "target": "ES2017",
     "lib": [
@@ -25,6 +25,7 @@
     "isolatedModules": true
   },
   "include": [
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "global.d.ts"

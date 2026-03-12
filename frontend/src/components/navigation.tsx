@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useNearWallet } from 'near-connect-hooks';
 
 import NearLogo from '../../public/near-logo.svg';
+import { HelloNearContract } from '@/config';
 
 export const Navigation = () => {
    const { signedAccountId, loading, signIn, signOut } = useNearWallet();
@@ -11,7 +12,12 @@ export const Navigation = () => {
     if (signedAccountId) {
       signOut();
     } else {
-      signIn();
+      signIn({
+        addFunctionCallKey: {
+          contractId: HelloNearContract,
+          allowMethods: { anyMethod: false, methodNames: ["set_greeting"] },
+        }
+      });
     }
   };
 
